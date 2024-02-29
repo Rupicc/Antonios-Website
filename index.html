@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Gangy</title>
-  <meta name="description" content="Sin-Services a WIP.">
+  <meta name="description" content="Gangy Web Supported By, Sin-Services">
 
   <link rel="apple-touch-icon" sizes="76x76" href="favicon/Logo.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/Logo.svg">
@@ -21,5 +21,25 @@
   <div id="landing">
   <div class="landing-title">
     <h1>
-      <span class="highlight-title">Scroll Down For Info</span>,
+      <span class="highlight-title">Gangy Web</span>,
+
     </h1>
+    <div class="content" id="content">
+      <p id="text">Scroll down and click to change the text</p>
+    </div>
+    <script>
+      const textElement = document.getElementById('text');
+      let clickCount = 0;
+    
+      textElement.addEventListener('click', () => {
+        clickCount++;
+        textElement.textContent = `Text changed ${clickCount} time(s)`;
+      });
+    
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          textElement.textContent = 'You scrolled and changed the text!';
+        }
+      });
+    </script>
+    </body>
