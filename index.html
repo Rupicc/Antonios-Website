@@ -19,6 +19,11 @@
   body {
     background-color: #000000;
   }
+        #content {
+            height: 1500px; /* For demonstration purposes */
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+        }
 </style>
 <body data-aos-easing="ease-in-sine" data-aos-duration="600" data-aos-delay="100" data-new-gr-c-s-check-loaded="14.1153.0" data-gr-ext-installed="">
 
@@ -39,6 +44,14 @@
         clickCount++;
         textElement.textContent = `Welcome To DMM`;
       });
+        let content = document.getElementById('content');
+
+        content.addEventListener('scroll', function() {
+            if (content.scrollTop + content.clientHeight >= content.scrollHeight) {
+                // Load more content here
+                console.log('Loading more content...');
+            }
+        });
     </script>
     </body>
 <div>
