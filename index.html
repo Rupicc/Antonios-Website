@@ -40,14 +40,11 @@
         clickCount++;
         textElement.textContent = `Welcome To DMM`;
       });
-        let content = document.getElementById('content');
-
-        content.addEventListener('scroll', function() {
-            if (content.scrollTop + content.clientHeight >= content.scrollHeight) {
-                // Load more content here
-                console.log('Loading more content...');
+        window.onscroll = function() {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                // Fetch more content here
             }
-        });
+        };
     </script>
     </body>
 <div>
@@ -65,10 +62,3 @@
   You Will Be Redirected To The Main Website, IF Not You Can type 
   <a href="https://dmm.ruplicx.lol/main">dmm.ruplicx.lol/main</a>
 </h3>
-<style>
-  #content {
-      height: 1500px; /* For demonstration purposes */
-      border: 1px solid #000000;
-      overflow-y: scroll;
-  }
-</style>
