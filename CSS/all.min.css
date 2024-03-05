@@ -73,8 +73,8 @@ a:hover{
     text-align:justify
 }
 .neumorphism-button{
-    background:linear-gradient(145deg, rgba(100,100,105,0.15) 15%, rgba(33,33,33,0.4) 80%);
-    box-shadow:-4px -3px 2px 0 rgba(250,250,250,0.13),4px 4px 2px 0 rgba(0,0,0,0.4)
+    background:linear-gradient(145deg, rgba(0, 0, 0, 0.15) 15%, rgba(33,33,33,0.4) 80%);
+    box-shadow:-4px -3px 2px 0 rgba(0, 0, 0, 0.13),4px 4px 2px 0 rgba(0,0,0,0.4)
 }
 .neumorphism-card{
     box-shadow:inset 2px 2px 4px #000,inset -2px -2px 4px #000000
