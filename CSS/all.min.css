@@ -39,6 +39,14 @@ a:hover{
     color:#8fc6e2;
     text-shadow:0.25rem 0.25rem 0.25rem #201d9b
 }
+.highlight-titlecred1{
+    color:#26ff00;
+    text-shadow:0.25rem 0.25rem 0.25rem #55de87
+}
+.highlight-titlecred2{
+    color:#be8fe2;
+    text-shadow:0.25rem 0.25rem 0.25rem #9b1d8a
+}
 .highlight-link{
     box-shadow:inset 0 -0.125rem 0 #ff073a;
     box-sizing:border-box;
