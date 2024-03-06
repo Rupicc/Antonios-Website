@@ -16,9 +16,6 @@
   <link rel="stylesheet" href="CSS/vendors.min.css">
 <head/>
 <style>
-  body {
-    background-color: #000000;
-  }
   /* Loading screen styles */
   #loading-overlay {
       position: fixed;
@@ -98,30 +95,6 @@
 h1:hover {
   font-size: 2.4em; /* Adjust the size according to your preference */
 }
-
-    /* Profile picture */
-    h1::before {
-      content: "";
-      position: absolute;
-      width: 50px;
-      height: 50px;
-      background-image: url('assets/7sb7hs8dgdfs.png'); /* Replace with the path to your profile picture */
-      background-size: cover;
-      border-radius: 50%;
-      left: -60px;
-      top: 50%;
-      transform: translateY(-50%);
-      animation: profileFadeIn 1s ease-in-out, profileSlideIn 1s ease-in-out;
-    }
-
-    .owner {
-      background-color: #141414;
-      color: #ffffff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-
     nav {
       text-align: center;
       background-color: #333333;
