@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
- html{
-    background:#000000;
-    color:#fff;
-    font-family:"Raleway",sans-serif;
-    font-size:1rem;
-    font-weight:normal;
-    height:100%;
-    overflow:hidden 
-}
 body{
     height:100%
 }
