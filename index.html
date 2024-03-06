@@ -19,18 +19,303 @@
   body {
     background-color: #000000;
   }
-  nav {
-            text-align: center;
-            background-color: #383838;
-            color: white;
-            padding: 8px;
-        }
+  /* Loading screen styles */
+  #loading-overlay {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #222222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #loading-spinner {
+      border: 8px solid #555555;
+      border-top: 8px solid #cccccc;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Other styles */
+    body {
+      background-color: #222222;
+      color: #cccccc;
+      font-family: 'Raleway', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: transform 0.5s ease;
+      transform: scale(1.1);
+    }
+
+    /* Custom Scrollbar Styles */
+    body::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #555555;
+      border-radius: 10px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #333333;
+    }
+
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70px;
+      background-color: #333333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in-out, slideDown 1s ease-in-out;
+      z-index: 1001;
+      position: relative;
+    }
+
+  h1 {
+  font-size: 2em;
+  margin: 0;
+  line-height: 1;
+  color: #cccccc;
+  position: relative;
+  display: inline-block;
+  animation: textFadeIn 1s ease-in-out, textSlideIn 1s ease-in-out;
+  transition: font-size 0.3s ease-in-out; /* Added transition property */
+}
+
+/* Header hover effect */
+h1:hover {
+  font-size: 2.4em; /* Adjust the size according to your preference */
+}
+
+    /* Profile picture */
+    h1::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('assets/7sb7hs8dgdfs.png'); /* Replace with the path to your profile picture */
+      background-size: cover;
+      border-radius: 50%;
+      left: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: profileFadeIn 1s ease-in-out, profileSlideIn 1s ease-in-out;
+    }
+
+    .owner {
+      background-color: #141414;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-left: 10px;
+    }
+
+    nav {
+      text-align: center;
+      background-color: #333333;
+      padding: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: fadeIn 1s ease-in-out, slideDown 1s ease-in-out;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #cccccc;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 1.2em;
+      transition: color 0.3s ease-in-out;
+      animation: textFadeIn 1s ease-in-out;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-in-out, blurIn 1s ease-in-out;
+      background-color: rgba(33, 33, 33, 0.9); /* Darker gray with alpha for slight transparency */
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+      backdrop-filter: blur(10px); /* Add a slight blur effect to the background */
+    }
+
+    h2 {
+      color: #cccccc;
+      font-weight: bold;
+      margin-bottom: 20px;
+      font-size: 2em;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #cccccc;
+    }
+
+/* Text pulsing animation */
+@keyframes textPulse {
+  0% {
+    font-size: 3em;
+  }
+  100% {
+    font-size: 3.2em;
+  }
+}
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes textFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes textSlideIn {
+      from {
+        transform: translateX(-20px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes profileFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes profileSlideIn {
+      from {
+        transform: translateX(20px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-50px);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes blurIn {
+      from {
+        backdrop-filter: blur(0);
+      }
+      to {
+        backdrop-filter: blur(10px);
+      }
+    }
+    
+    /* Socials styling */
+    #socials {
+      text-align: center;
+      margin-top: 30px;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    #socials ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #socials li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    #socials a {
+      text-decoration: none;
+      color: #cccccc;
+      font-size: 2.5em;
+      transition: color 0.3s ease-in-out;
+      animation: textFadeIn 1s ease-in-out;
+    }
+
+    #socials a:hover {
+      color: #ffffff;
+    }
+       
+    /* Footer styles */
+    footer {
+      text-align: center;
+    }
+
+/* Portfolio content styles */
+#portfolio-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+}
+
   </style>
   <nav>
     <h2>
-    <a href="" class="highlight-titlecred">Home</a>
+    <a href=" " class="highlight-titlecred">Home</a>
+
     <a href="Prox" class="highlight-titlecred">Proxy</a>
+
     <a href="Apps" class="highlight-titlecred">Apps</a>
+
     <a href="About" class="highlight-titlecred">About Us</a>
   </h2>
   </nav>
@@ -71,9 +356,9 @@
   <span class="highlight-titlefr">All Credits Handed To Andy, And Credits To Rupic For Developing The Website</span>,
 </h2>
 </div>
-<h3>If You <a href="https://dmm.ruplicx.lol/main">Click Here</a>
+<h3>If You <a href="https://andyy.ruplicx.lol/main">Click Here</a>
   You Will Be Redirected To The Main Website, IF Not You Can type 
-  <a href="https://dmm.ruplicx.lol/main">dmm.ruplicx.lol/main</a>
+  <a href="https://andyy.ruplicx.lol/main">dmm.ruplicx.lol/main</a>
 </h3>
 
 <h3> 
